@@ -3,7 +3,23 @@ import random, json, os, requests
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-TOKEN = 8854506215:AAEc_JHhouGLD-1NE-7ShnxhMYwkW8eHgXE
+TOKEN = import os
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
+import json
+
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
+
+Your token was replaced with a new one. You can use this token to access HTTP API:
+8854506215:
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text("البوت شغال!")
+
+if __name__ == "__main__":
+    app = Application.builder().token(BOT_TOKEN).build()
+    app.add_handler(CommandHandler("start", start))
+    app.run_polling()
 
 def load_top():
     if os.path.exists("top.json"):

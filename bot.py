@@ -35,10 +35,31 @@ async def zakhrafa(update, context):
 async def sarah_cmd(update, context):
     await update.message.reply_text(random.choice(["بسرعة", "اكتر حاجة جريئة عملتيها؟", "حد هتقولي ايه؟"]))
 
+async def fadfada(update, context):
+    await update.message.reply_text(random.choice(["سامعك ❤️ احكي", "فضفض براحتك", "انا هنا اسمعك"]))
+
+async def xo(update, context):
+    await update.message.reply_text("X O لسه بنظبطها 🎮")
+
+async def nokta(update, context):
+    await update.message.reply_text(random.choice(["مرة واحد...", "نكتة جامدة 😂"]))
+
+async def top_cmd(update, context):
+    data = load_top()
+    if not data:
+        await update.message.reply_text("لسه مفيش نقط")
+        return
+    txt = "\n".join([f"{v['name']}: {v['score']}" for v in data.values()])
+    await update.message.reply_text(f"التوب:\n{txt}")
+
 if __name__ == "__main__":
     app = Application.builder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("help", help_cmd))
     app.add_handler(CommandHandler("zakhrafa", zakhrafa))
     app.add_handler(CommandHandler("sarah", sarah_cmd))
-    app.run_polling()
+    app.add_handler(CommandHandler("fadfada", fadfada))
+    app.add_handler(CommandHandler("xo", xo))
+    app.add_handler(CommandHandler("nokta", nokta))
+    app.add_handler(CommandHandler("top", top_cmd))
+    app.run_polling(drop_pending_updates=True)

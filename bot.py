@@ -189,4 +189,3 @@ def zakhrafa_17(name): return f"♛ {name} ♛"
 def zakhrafa_18(name): return f"♚ {name} ♚"
 def zakhrafa_19(name): return f"♜ {name} ♜"
 def zakhrafa_20(name): return f"♞ {name} ♞"
-def zakhrafa_21(name):

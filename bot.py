@@ -6,7 +6,7 @@ from telegram.ext import (
     MessageHandler, filters, ContextTypes
 )
 
-TOKEN = os.environ["TELEGRAM_TOKEN"]
+TOKEN = 8854506215:AAFcbiYDfvk5QJdRy2duv5Q23adcWPuusMA["TELEGRAM_TOKEN"]
 
 # ==================== الأوامر المتاحة ====================
 # المستخدم يكتب كلمة من دول → البوت يرد
